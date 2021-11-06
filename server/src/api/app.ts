@@ -1,5 +1,5 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 
 const app = express();
 app.use(cors());
@@ -11,4 +11,4 @@ app.use((err, _request, response, _next) => {
   return response.status(500).json({ message: err.message });
 });
 
-export = app;
+module.exports = app;
