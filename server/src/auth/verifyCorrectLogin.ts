@@ -1,5 +1,5 @@
-import { findUserByEmail } from 'models/userModel';
-import { incorrectLogin } from 'utils/messages';
+import { findUserByEmail } from '../models/userModel';
+import { incorrectLogin } from '../utils/messages';
 
 const verifyCorrectLogin = async (email, password) => {
   const existsEmail = await findUserByEmail(email);

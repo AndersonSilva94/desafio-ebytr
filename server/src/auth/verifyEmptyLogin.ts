@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { filledFields } from 'utils/messages';
+import { filledFields } from '../utils/messages';
 
 const verifyEmptyLogin = (email: string, password: string) => {
   const schema = Joi.object({
