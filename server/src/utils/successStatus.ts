@@ -1,3 +1,2 @@
-const CREATED = 201;
-
-export default CREATED;
+export const STATUS_OK = 200;
+export const CREATED = 201;

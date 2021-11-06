@@ -1,4 +1,4 @@
-const connection = require('../db/conn');
+import connection from '../db/conn';
 
 export const createUser = async (name: string, email: string, password: string) => {
   const db = await connection();
