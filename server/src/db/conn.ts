@@ -16,7 +16,7 @@ const connection = () => (db
   : MongoClient.connect(MONGO_DB_URL, OPTIONS)
     .then((conn) => {
       db = conn.db(DB_NAME);
-      // console.log('entrou no servidor');
+      console.log('entrou no servidor');
       return db;
     }));
 

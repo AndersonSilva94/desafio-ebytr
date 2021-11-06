@@ -1,7 +1,7 @@
-const appListen = require('./app');
+import app from './app';
 
 const PORT = 3000;
 
-appListen.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`conectado na porta ${PORT}`);
 });
