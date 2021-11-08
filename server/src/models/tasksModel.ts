@@ -1,26 +1,21 @@
 import connection from 'db/conn';
-
-interface Task {
-  task: string,
-  date: string,
-  status: string,
-}
-
-interface User {
-  _id: string,
-}
+import { Task, User } from 'types/interfaces';
 
 const createTask = async (taskObj: Task, user: User) => {
-  const { task, date, status } = taskObj;
+  const { task, status } = taskObj;
   const { _id: userId } = user;
   const db = await connection();
   const newTask = await db.collection('tasks').insertOne({
-    task, date, status, userId,
+    task,
+    date_created: new Date(),
+    status,
+    userId,
   });
 
-  return {
-    _id: newTask.insertedId, task, date, status, userId,
-  };
+  console.log(newTask);
+  /* return {
+    _id: newTask.insertedId, created: newTask.date_created, task, status, userId,
+  }; */
 };
 
 export default createTask;
