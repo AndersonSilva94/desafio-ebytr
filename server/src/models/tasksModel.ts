@@ -13,9 +13,9 @@ const createTask = async (taskObj: Task, user: User) => {
   });
 
   console.log(newTask);
-  /* return {
-    _id: newTask.insertedId, created: newTask.date_created, task, status, userId,
-  }; */
+  return {
+    _id: newTask.insertedId, task, status, userId,
+  };
 };
 
 export default createTask;
