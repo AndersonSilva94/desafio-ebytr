@@ -6,3 +6,7 @@ export interface Task {
 export interface User {
   _id: string,
 }
+
+export interface Token {
+  email: string,
+}

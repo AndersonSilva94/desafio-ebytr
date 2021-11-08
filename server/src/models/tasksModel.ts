@@ -1,5 +1,5 @@
 import connection from 'db/conn';
-import { Task, User } from 'types/interfaces';
+import { Task, User } from 'utils/interfaces';
 
 const createTask = async (taskObj: Task, user: User) => {
   const { task, status } = taskObj;
