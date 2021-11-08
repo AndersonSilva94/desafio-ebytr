@@ -21,7 +21,11 @@ export const createTask = async (taskObj: Task, user: User) => {
 
 export const getAllTasks = async (userId: string) => {
   if (!ObjectId.isValid(userId)) return null;
+
   const db = await connection();
-  const getAll = await db.collection('tasks').find({ userId }).toArray();
+  const getAll = await db.collection('tasks').find(
+    { userId: new ObjectId(userId) },
+  ).toArray();
+
   return getAll;
 };

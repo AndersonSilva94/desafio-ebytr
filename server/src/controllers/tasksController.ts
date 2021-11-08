@@ -14,10 +14,10 @@ export const createTask = async (request: Request, response: Response, next: Nex
 };
 
 export const getAllTasks = async (request: Request, response: Response, next: NextFunction) => {
-  const { user: { _id } } = request;
+  const { id } = request.params;
 
   try {
-    const getTasks = await getAll(_id);
+    const getTasks = await getAll(id);
 
     return response.status(getTasks.status).json(getTasks.message);
   } catch (err) {
