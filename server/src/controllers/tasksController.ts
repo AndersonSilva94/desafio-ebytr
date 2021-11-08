@@ -1,7 +1,7 @@
 import { NextFunction, Response, Request } from 'express';
-import create from '../services/tasksService';
+import { create, getAll } from '../services/tasksService';
 
-const createTask = async (request: Request, response: Response, next: NextFunction) => {
+export const createTask = async (request: Request, response: Response, next: NextFunction) => {
   const { user } = request;
 
   try {
@@ -13,4 +13,14 @@ const createTask = async (request: Request, response: Response, next: NextFuncti
   }
 };
 
-export default createTask;
+export const getAllTasks = async (request: Request, response: Response, next: NextFunction) => {
+  const { user: { _id } } = request;
+
+  try {
+    const getTasks = await getAll(_id);
+
+    return response.status(getTasks.status).json(getTasks.message);
+  } catch (err) {
+    return next(err);
+  }
+};
