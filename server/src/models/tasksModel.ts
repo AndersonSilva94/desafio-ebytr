@@ -36,7 +36,7 @@ const getTaskById = async (taskId: string) => {
   const db = await connection();
   const getTask = await db.collection('tasks').findOne(
     { _id: new ObjectId(taskId) },
-  ).toArray();
+  );
 
   return getTask;
 };
@@ -46,7 +46,7 @@ export const updateTask = async (id: string, taskObj: object) => {
 
   const db = await connection();
   await db.collection('tasks').findOneAndUpdate(
-    { _id: id },
+    { _id: new ObjectId(id) },
     { $set: { ...taskObj, date_updated: new Date() } },
     { returnOriginal: false },
   );
