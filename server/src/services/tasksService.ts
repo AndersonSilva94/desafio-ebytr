@@ -1,5 +1,5 @@
 import verifyTasksField from '../auth/verifyTasksField';
-import createTask from '../models/tasksModel';
+import { createTask } from '../models/tasksModel';
 import { Task, User } from '../utils/interfaces';
 import { CREATED } from '../utils/successStatus';
 

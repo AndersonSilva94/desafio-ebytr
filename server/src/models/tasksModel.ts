@@ -1,7 +1,8 @@
+import { ObjectId } from 'mongodb';
 import connection from '../db/conn';
 import { Task, User } from '../utils/interfaces';
 
-const createTask = async (taskObj: Task, user: User) => {
+export const createTask = async (taskObj: Task, user: User) => {
   const { task, status } = taskObj;
   const { _id: userId } = user;
   const created = new Date();
@@ -18,4 +19,9 @@ const createTask = async (taskObj: Task, user: User) => {
   };
 };
 
-export default createTask;
+export const getAllTasks = async (userId: string) => {
+  if (!ObjectId.isValid(userId)) return null;
+  const db = await connection();
+  const getAll = await db.collection('tasks').find({ userId }).toArray();
+  return getAll;
+};
