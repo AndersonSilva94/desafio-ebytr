@@ -1,10 +1,10 @@
-import jwt from 'jsonwebtoken';
 import { NextFunction, Request, Response } from 'express';
-import { findUserByEmail } from 'models/userModel';
-import { Token } from 'utils/interfaces';
-import { invalidUser } from 'utils/messages';
-import { UNAUTHORIZED } from 'utils/errorStatus';
-import { INVALID_JWT } from 'utils/errorMessages';
+import jwt from 'jsonwebtoken';
+import { findUserByEmail } from '../models/userModel';
+import { Token } from '../utils/interfaces';
+import { invalidUser } from '../utils/messages';
+import { UNAUTHORIZED } from '../utils/errorStatus';
+import { INVALID_JWT } from '../utils/errorMessages';
 
 require('dotenv').config();
 

@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { invalidFields } from 'utils/messages';
+import { invalidFields } from '../utils/messages';
 
 const verifyTasksField = ({ task }) => {
   const schema = Joi.string().not().empty().required();
