@@ -5,6 +5,6 @@ import { createTask, getAllTasks } from '../controllers/tasksController';
 const router = express.Router();
 
 router.post('/', verifyToken, createTask);
-router.get('/:id', getAllTasks);
+router.get('/', verifyToken, getAllTasks);
 
 export default router;

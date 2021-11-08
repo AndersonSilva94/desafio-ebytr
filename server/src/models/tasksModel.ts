@@ -29,3 +29,28 @@ export const getAllTasks = async (userId: string) => {
 
   return getAll;
 };
+
+const getTaskById = async (taskId: string) => {
+  if (!ObjectId.isValid(taskId)) return null;
+
+  const db = await connection();
+  const getTask = await db.collection('tasks').findOne(
+    { _id: new ObjectId(taskId) },
+  ).toArray();
+
+  return getTask;
+};
+
+export const updateTask = async (id: string, taskObj: object) => {
+  if (!ObjectId.isValid(id)) return null;
+
+  const db = await connection();
+  await db.collection('tasks').findOneAndUpdate(
+    { _id: id },
+    { $set: { ...taskObj, date_updated: new Date() } },
+    { returnOriginal: false },
+  );
+
+  const response = await getTaskById(id);
+  return response;
+};
