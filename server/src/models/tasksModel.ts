@@ -54,3 +54,14 @@ export const updateTask = async (id: string, taskObj: object) => {
   const response = await getTaskById(id);
   return response;
 };
+
+export const deleteTask = async (id: string) => {
+  if (!ObjectId.isValid(id)) return null;
+
+  const db = await connection();
+  const deleted = await db.collection('tasks').deleteOne(
+    { _id: new ObjectId(id) },
+  );
+
+  return deleted;
+};
