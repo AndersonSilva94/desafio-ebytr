@@ -1,7 +1,9 @@
 import verifyTasksField from '../auth/verifyTasksField';
-import { createTask, getAllTasks, updateTask } from '../models/tasksModel';
+import {
+  createTask, deleteTask, getAllTasks, updateTask,
+} from '../models/tasksModel';
 import { Task, User } from '../utils/interfaces';
-import { CREATED, STATUS_OK } from '../utils/successStatus';
+import { CREATED, NO_CONTENT, STATUS_OK } from '../utils/successStatus';
 
 export const create = async (tasksObj: Task, user: User) => {
   await verifyTasksField(tasksObj);
@@ -17,4 +19,9 @@ export const getAll = async (userId: string) => {
 export const update = async (id: string, taskObj: object) => {
   const setTask = await updateTask(id, taskObj);
   return { status: STATUS_OK, message: setTask };
+};
+
+export const deleted = async (id: string) => {
+  await deleteTask(id);
+  return { status: NO_CONTENT, message: '' };
 };
