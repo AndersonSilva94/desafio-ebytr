@@ -1,5 +1,7 @@
 import { NextFunction, Response, Request } from 'express';
-import { create, getAll, update } from '../services/tasksService';
+import {
+  create, deleted, getAll, update,
+} from '../services/tasksService';
 
 export const createTask = async (request: Request, response: Response, next: NextFunction) => {
   const { user } = request;
@@ -32,6 +34,18 @@ export const updateTask = async (request: Request, response: Response, next: Nex
     const setTask = await update(id, request.body);
 
     return response.status(setTask.status).json(setTask.message);
+  } catch (err) {
+    return next(err);
+  }
+};
+
+export const deleteTask = async (request: Request, response: Response, next: NextFunction) => {
+  const { id } = request.params;
+
+  try {
+    const taskDeleted = await deleted(id);
+
+    return response.status(taskDeleted.status).json(taskDeleted.message);
   } catch (err) {
     return next(err);
   }
