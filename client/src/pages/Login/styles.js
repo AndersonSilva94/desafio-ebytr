@@ -3,16 +3,14 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${() => css`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to left, #E07EF0, #1892A2, #386AC0);
   `}
 `;
 
-export const ContainerForm = styled.div`
+export const ImgLogin = styled.img`
   ${() => css`
-    display: flex;
-    flex-direction: column;
+    width: 40vw;
   `}
 `

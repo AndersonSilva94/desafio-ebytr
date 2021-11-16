@@ -1,13 +1,13 @@
 import React from 'react';
 import FormLogin from '../../components/FormLogin';
-import { Container, ContainerForm } from './styles';
+import { Container, ImgLogin } from './styles';
+import ImgLogo from '../../assets/todo-list.svg';
 
 function Login() {
   return (
     <Container>
-      <ContainerForm>
-        <FormLogin />
-      </ContainerForm>
+      <FormLogin />
+      <ImgLogin src={ImgLogo} alt="" />
     </Container>
   );
 }

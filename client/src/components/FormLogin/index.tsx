@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, LinkButton } from './styles';
+import { Container, DivLogo, LinkButton } from './styles';
+import Logo from '../../assets/logo-trybe.jpg';
 
 function FormLogin() {
   return (
     <Container>
-      <div>
-        <p>Login!</p>
-      </div>
+      <DivLogo>
+        <h1>Login</h1>
+        <img src={Logo} alt="" />
+      </DivLogo>
       <form>
         <label htmlFor="email">
           E-mail:

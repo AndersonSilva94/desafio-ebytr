@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    width: 30vw;
+    width: 35vw;
     height: 80vh;
     padding: 2rem 1rem;
     background: white;
@@ -33,6 +33,20 @@ export const Container = styled.div`
     }
   `}
 `;
+
+export const DivLogo = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin-top: 1rem;
+      width: 25%;
+      border-radius: 50%;
+    }
+  `}
+`
 
 export const LinkButton = styled(Link)`
   ${() => css`
