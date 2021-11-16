@@ -1,10 +1,13 @@
 import React from 'react';
-import { Container } from './styles';
+import FormLogin from '../../components/FormLogin';
+import { Container, ContainerForm } from './styles';
 
 function Login() {
   return (
     <Container>
-      Login!
+      <ContainerForm>
+        <FormLogin />
+      </ContainerForm>
     </Container>
   );
 }
