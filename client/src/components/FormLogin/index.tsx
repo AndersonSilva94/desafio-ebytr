@@ -25,14 +25,14 @@ function FormLogin() {
           // onChange={ this.handleChange }
           />
         </label>
-        <LinkButton /* className={ disabled ? 'disabledLink' : '' } */ to="/carteira">
+        <LinkButton /* className={ disabled ? 'disabledLink' : '' } */>
           Entrar
         </LinkButton>
       </form>
       <div>
         <p>Ainda não é membro? Cadastre-se
           {' '}
-          <Link /* className={ disabled ? 'disabledLink' : '' } */ to="/carteira">
+          <Link /* className={ disabled ? 'disabledLink' : '' } */ to="/cadastro">
             aqui
           </Link>
         </p>
