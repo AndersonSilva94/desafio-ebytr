@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    width: 35vw;
-    height: 80vh;
+    width: 40vw;
+    height: 35rem;
     padding: 2rem 1rem;
     background: white;
     border-radius: 5px;
@@ -15,6 +15,8 @@ export const Container = styled.div`
     form {
       display: flex;
       flex-direction: column;
+      width: 100%;
+      height: auto;
 
       label {
         display: flex;
@@ -30,6 +32,10 @@ export const Container = styled.div`
 
     p {
       text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      width: 80vw;
     }
   `}
 `;
