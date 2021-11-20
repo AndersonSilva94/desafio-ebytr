@@ -34,6 +34,10 @@ export const DivImgCadastro = styled.div`
     img {
       width: 80%;
     }
+
+    @media (max-width: 600px) {
+      display: none;
+    }
   `}
 `
 
@@ -43,5 +47,9 @@ export const LinhaVertical = styled.div`
     background-color: silver;
     height: 80%;
     border-radius: 2px;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
   `}
 `
