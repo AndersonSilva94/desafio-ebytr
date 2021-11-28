@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "task": "estudar muito",
+      "date": "2019-12-02T00:00:00.000Z",
+      "status": "em aberto"
+    },
+    {
+      "id": 2,
+      "task": "descansar",
+      "date": "2019-12-02T00:00:00.000Z",
+      "status": "em aberto"
+    },
+    {
+      "id": 3,
+      "task": "tomar banho",
+      "date": "2019-12-02T00:00:00.000Z",
+      "status": "em aberto"
+    },
+    {
+      "id": 4,
+      "task": "comer",
+      "date": "2019-12-02T00:00:00.000Z",
+      "status": "em aberto"
+    }
+  ]
+}
