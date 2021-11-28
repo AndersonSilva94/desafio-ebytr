@@ -25,7 +25,7 @@ function FormLogin() {
           // onChange={ this.handleChange }
           />
         </label>
-        <LinkButton /* className={ disabled ? 'disabledLink' : '' } */>
+        <LinkButton /* className={ disabled ? 'disabledLink' : '' } */ to="/home">
           Entrar
         </LinkButton>
       </form>
