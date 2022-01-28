@@ -29,4 +29,4 @@ const getDate = () => {
   return textDate;
 };
 
-module.exports = getDate;
+export default getDate;
