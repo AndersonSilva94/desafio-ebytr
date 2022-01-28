@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Routes as Switch } from 'react-router-dom'
 import './App.css';
 import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
@@ -9,9 +9,9 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path='/' component={Login} />
-        <Route exact path='/cadastro' component={Cadastro} />
-        <Route exact path='/home' component={Home} />
+        <Route path='/' element={<Login />} />
+        <Route path='/cadastro' element={<Cadastro />} />
+        <Route path='/home' element={<Home />} />
       </Switch>
     </>
   );

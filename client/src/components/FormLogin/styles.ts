@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
@@ -54,7 +53,7 @@ export const DivLogo = styled.div`
   `}
 `
 
-export const LinkButton = styled(Link)`
+export const LinkButton = styled.button`
   ${() => css`
     padding: 1rem;
     text-align: center;
@@ -64,8 +63,14 @@ export const LinkButton = styled(Link)`
     color: white;
     margin-bottom: 1rem;
     transition: all 2s;
+    cursor: pointer;
 
-    &:hover {
+    &:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+
+    &:not([disabled]):hover {
       background: linear-gradient(to right, #E07EF0, #1892A2, #386AC0);
     }
   `}
